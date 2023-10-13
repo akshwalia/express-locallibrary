@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+    h1 #{instance.book.title}, #{instance.imprint}
+
+    form(method="POST" action='')
+        h4 Are you sure you want to delete this book instance?
+
+        button.btn.btn-primary(type='submit') Delete
+

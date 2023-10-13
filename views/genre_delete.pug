@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+    h1 #{genre.name}
+
+    if(books.length) 
+        h4 Delete the following books before attempting to delete this genre.
+
+        each book in books 
+            a(href=book.url) #{book.title}
+
+            p(style="margin-bottom: 20px") #{book.summary}
+
+    else 
+        h4 Are you sure you want to delete this genre?
+
+        form(method="POST" action='')
+            input(type="hidden" value=genre._id required='true')
+
+            button.btn.btn-primary(type='submit') Delete
+    
